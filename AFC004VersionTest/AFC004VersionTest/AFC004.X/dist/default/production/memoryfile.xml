@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <executable name="dist/default/production/AFC004.X.production.elf">
+    <memory name="data">
+      <units>bytes</units>
+      <length>8192</length>
+      <used>3932</used>
+      <free>4260</free>
+    </memory>
+    <memory name="program">
+      <units>bytes</units>
+      <length>140928</length>
+      <used>70074</used>
+      <free>70854</free>
+    </memory>
+  </executable>
+</project>
