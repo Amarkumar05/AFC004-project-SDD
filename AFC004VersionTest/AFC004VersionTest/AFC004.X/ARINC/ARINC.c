@@ -552,7 +552,7 @@ ARINC429_WriteMsgReturnStatus ARINC429_AssembleStdBCDmessage( const ARINC429_TxM
 }
 #ARINC429_AssembleStdBCDmessage
 
-#ARINC429_CheckValidityOfARINC_BNR_Message
+#ARINC429_CheckValidityOfARINC_BNR_Data
 /* Function: ARINC429_CheckValidityOfARINC_BNR_Message
  *
  * Description: Checks the upper and lower bounds of ARINC binary engineering 
@@ -569,7 +569,7 @@ ARINC429_SM ARINC429_CheckValidityOfARINC_BNR_Data( const float engData,
     return ((engData < lblCfg->minValidValue) || (engData > lblCfg->maxValidValue)) ?
             ARINC429_SSM_BNR_FAILURE_WARNING : ARINC429_SSM_BNR_NORMAL_OPERATION;
 }
-#ARINC429_CheckValidityOfARINC_BNR_Message
+#ARINC429_CheckValidityOfARINC_BNR_Data
 
 #ARINC429_GetLatestLabelData
 /* Function: ARINC429_GetLatestLabelData
