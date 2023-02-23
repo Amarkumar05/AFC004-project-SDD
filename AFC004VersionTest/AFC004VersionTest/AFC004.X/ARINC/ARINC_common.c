@@ -150,7 +150,7 @@ uint8_t ARINC429_ExtractSSMbits( uint32_t ARINCMsg )
 {
     return (ARINCMsg >> ARINC429_SSM_FIELD_SHIFT_VAL) & ARINC429_SSM_FIELD_LIMIT_MASK;
 }
-
+#TAG1
 /* Function: ARINC429_BCD_ConvertBCDvalToEngVal
  *
  * Description: Converts a value from standard BCD to engineering units.
@@ -205,7 +205,7 @@ int32_t ARINC429_BCD_ConvertBCDvalToEngVal( const size_t numSigDigits,
     }
     return success;
 }
-
+#TAG1
 /* Function: ARINC429_BCD_ConvertEngValToBCD
  *
  * Description: Converts a BCD engineering value into BCD data format 
