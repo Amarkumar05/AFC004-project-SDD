@@ -23,7 +23,7 @@
 #define MAX_OCTAL_LABEL_VALUE 377
 
 /**************  Function Definition(s) ********************/
-
+#DownloadMessagesFromARINCtxvrArx2
 /* Function: DownloadMessagesFromARINCtxvrArx2
  * 
  * Return: None 
@@ -68,7 +68,9 @@ void DownloadMessagesFromARINCtxvrArx2( ARINC429_RxMsgArray * const ARINCMsgArra
     }
     return;
 }
+#DownloadMessagesFromARINCtxvrArx2
 
+#ProcessARINCBusFailure
 /*
  * Function: ProcessAHRSTimeout
  * 
@@ -87,7 +89,9 @@ bool ProcessARINCBusFailure( ARINC429_RxMsgArray * ARINCMsgArray )
     return ((ARINCMsgArray->currentCounts >= ARINCMsgArray->maxBusFailureCounts))
             ? true : false;
 }
+#ProcessARINCBusFailure
 
+#DownloadMessagesFromARINCtxvrBrx2
 /* Function: DownloadMessagesFromARINCtxvrBrx2
  *
  * Description: Retrieves all messages from transceiver B FIFO and processes
@@ -129,7 +133,9 @@ void DownloadMessagesFromARINCtxvrBrx2( ARINC429_RxMsgArray * const ARINCMsgArra
     }
     return;
 }
+#DownloadMessagesFromARINCtxvrBrx2
 
+#TransmitLatestARINCMsgIfValid
 /* Function: TransmitLatestARINCMsgIfValid
  * 
  * Description: Accepts as inputs a pointer to a rxMessage array and a label. Searches the rxArray for a 
@@ -176,5 +182,6 @@ void TransmitLatestARINCMsgIfValid( ARINC429_RxMsgArray * const rxMsgArray,
     }
     return;
 }
+#TransmitLatestARINCMsgIfValid
 
 /* end ArincDownload.c source file*/
