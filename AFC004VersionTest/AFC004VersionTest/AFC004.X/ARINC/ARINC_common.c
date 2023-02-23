@@ -20,6 +20,7 @@
 
 /**************  Function Definition(s) ********************/
 
+#ARINC429_BNR_ConvertEngValToRawBNRmsgData
 /* Function: ARINC429_BNR_ConvertEngValToRawBNRmsgData
  *
  * Description: Converts a value from engineering units to raw data field values. 
@@ -85,7 +86,9 @@ int32_t ARINC429_BNR_ConvertEngValToRawBNRmsgData( const size_t numSigBits,
     }
     return success;
 }
+#ARINC429_BNR_ConvertEngValToRawBNRmsgData
 
+#ARINC429_BNR_ConvertRawMsgDataToEngUnits
 /* Function: ARINC429_BNR_ConvertRawMsgDataToEngUnits
  *
  * Description: Converts a raw message data to floating point engineering units. 
@@ -124,7 +127,9 @@ int32_t ARINC429_BNR_ConvertRawMsgDataToEngUnits( const uint8_t numSigBits,
 
     return success;
 }
+#ARINC429_BNR_ConvertRawMsgDataToEngUnits
 
+#ARINC429_ExtractSDIbits
 /* Function: ARINC429_ExtractSDIbits
  *
  * Description: Extracts SDI field from an ARINC429 message 
@@ -137,7 +142,9 @@ uint8_t ARINC429_ExtractSDIbits( uint32_t ARINCMsg )
 {
     return (ARINCMsg >> ARINC429_SDI_FIELD_SHIFT_VAL) & ARINC429_SDI_FIELD_LIMIT_MASK;
 }
+#ARINC429_ExtractSDIbits
 
+#ARINC429_ExtractSSMbits
 /* Function: ARINC429_ExtractSSMbits
  *
  * Description: Extracts SSM field from an ARINC429 message
@@ -150,7 +157,9 @@ uint8_t ARINC429_ExtractSSMbits( uint32_t ARINCMsg )
 {
     return (ARINCMsg >> ARINC429_SSM_FIELD_SHIFT_VAL) & ARINC429_SSM_FIELD_LIMIT_MASK;
 }
-#TAG1
+#ARINC429_ExtractSSMbits
+
+#ARINC429_BCD_ConvertBCDvalToEngVal
 /* Function: ARINC429_BCD_ConvertBCDvalToEngVal
  *
  * Description: Converts a value from standard BCD to engineering units.
@@ -205,7 +214,9 @@ int32_t ARINC429_BCD_ConvertBCDvalToEngVal( const size_t numSigDigits,
     }
     return success;
 }
-#TAG1
+#ARINC429_BCD_ConvertBCDvalToEngVal
+
+#ARINC429_BCD_ConvertEngValToBCD
 /* Function: ARINC429_BCD_ConvertEngValToBCD
  *
  * Description: Converts a BCD engineering value into BCD data format 
@@ -253,7 +264,7 @@ int32_t ARINC429_BCD_ConvertEngValToBCD( const size_t numSigDigits,
             tempValue /= 10;
             count++;
         }
-
+#ARINC429_BCD_ConvertEngValToBCD
         // Check for data clipping
         if (0 == tempValue)
         {
