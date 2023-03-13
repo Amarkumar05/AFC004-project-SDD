@@ -70,7 +70,7 @@ static bool isTimer23Initialized = false;
 
 
 /**************  Function Definitions ********************/
-
+#Timer23_Initialize
 /* Function: Timer23_Initialize
  *
  * Description: Inputs the 16 bit configuration value and 32bit timer period.
@@ -104,7 +104,9 @@ void Timer23_Initialize( const uint16_t t2config, /* Configuration register valu
     IEC0bits.T2IE = 0;
     return;
 }
+#Timer23_Initialize
 
+#Timer23_GetTimestamp_ms
 /* Function: Timer23_GetTimestamp_ms
  *
  * Description: Reads the TMR2 register. Reading TMR2 register causes the TMR3HLD
@@ -136,7 +138,9 @@ uint32_t Timer23_GetTimestamp_ms( )
     }
     return returnVal;
 }
+#Timer23_GetTimestamp_ms
 
+#Timer23_Delay_ms
 /* 
  * Function: Timer23_Delay_ms
  * 
@@ -181,5 +185,5 @@ void Timer23_Delay_ms( uint32_t delayInMilliseconds )
     }
     return;
 }
-
+#Timer23_Delay_ms
 /* End of Timer23.c source file */
