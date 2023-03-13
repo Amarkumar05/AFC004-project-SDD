@@ -155,7 +155,7 @@ static sIIR_struct accelerationZFilter;
 
 
 /**************  Function Definition(s) ********************/
-
+#SetupTurnRateIIRFilter
 /* Function: SetupTurnRateIIRFilter
  *
  * Description: Performs an IIR Differentiator setup based on input configuration values. 
@@ -179,7 +179,8 @@ void SetupTurnRateIIRDiff( const float k1,
                             upperDelta,
                             lowerDelta );
 }
-
+#SetupTurnRateIIRFilter
+#SetupNormAccelIIRFilter
 /* Function: SetupNormAccelIIRFilter
  *
  * Description: Calls IIRSetup based on input configurable k1 and k2 values 
@@ -196,7 +197,9 @@ void SetupNormAccelIIRFilter( const float k1,
                 k1,
                 k2 );
 }
+#SetupNormAccelIIRFilter
 
+#CalculateSlipAngle
 /* Function: CalculateSlipAngle
  * 
  * Description: Slip Angle = arcTan (aY/aZ). aZ will be filtered through an IIR Filter. 
@@ -287,7 +290,9 @@ uint32_t CalculateSlipAngle( const ARINC429_RxMsgArray * const rxMsgArray )
                                     &slipAngleWord );
     return slipAngleWord;
 }
+#CalculateSlipAngle
 
+#CalculateTurnRate
 /*
  * Function: CalculateTurnRate
  * 
@@ -363,7 +368,9 @@ uint32_t CalculateTurnRate( const ARINC429_RxMsgArray * const rxMsgArray )
                                     &turnRateWord );
     return turnRateWord;
 }
+#CalculateTurnRate
 
+#CalculateNewMagneticHeadingARINCWord
 /*
  * Function: CalculateNewMagneticHeadingARINCWord
  * 
@@ -415,7 +422,9 @@ uint32_t CalculateNewMagneticHeadingARINCWord( const ARINC429_RxMsgArray * const
                                     &magHeadingWord );
     return magHeadingWord;
 }
+#CalculateNewMagneticHeadingARINCWord
 
+#CalculateNewPitchAngleARINCWord
 /*
  * Function: CalculateNewPitchAngleARINCWord
  * 
@@ -459,7 +468,9 @@ uint32_t CalculateNewPitchAngleARINCWord( const ARINC429_RxMsgArray * const rxMs
                                     &pitchAngleARINCWord );
     return pitchAngleARINCWord;
 }
+#CalculateNewPitchAngleARINCWord
 
+#CalculateNewRollAngleARINCWord
 /*
  * Function: CalculateNewRollAngleARINCWord
  * 
@@ -501,7 +512,9 @@ uint32_t CalculateNewRollAngleARINCWord( const ARINC429_RxMsgArray * const rxMsg
                                     &rollAngleARINCWord );
     return rollAngleARINCWord;
 }
+#CalculateNewRollAngleARINCWord
 
+#CalculateNewRollAngleARINCWord
 /*
  * Function: CalculateNewBodyLateralAccelARINCWord
  * 
@@ -544,7 +557,9 @@ uint32_t CalculateNewBodyLateralAccelARINCWord( const ARINC429_RxMsgArray * cons
                                     &bodyLatAccARINCWord );
     return bodyLatAccARINCWord;
 }
+#CalculateNewRollAngleARINCWord
 
+#CalculateNewNormalAccelerationARINCWord
 /* Function: CalculateNewNormalAccelerationARINCWord
  * 
  * Description: Calculates the body lateral acceleration ARINC word. If the 
@@ -595,7 +610,9 @@ uint32_t CalculateNewNormalAccelerationARINCWord( const ARINC429_RxMsgArray * co
                                     &az );
     return az;
 }
+#CalculateNewNormalAccelerationARINCWord
 
+#CalculateARINCLabel272
 /* Function: CalculateARINCLabel272
  * 
  * Description: Set 25 to zero, 26 to adcTimeout, 12&11 to MSU fail.
@@ -642,7 +659,9 @@ uint32_t CalculateARINCLabel272( const ARINC429_RxMsgArray * const rxMsgArray,
     }
     return label272ARINCWord;
 }
+#CalculateARINCLabel272
 
+#CalculateARINCLabel274
 /* Function: CalculateARINCLabel274
  *
  * Description: Set bit 28 if MSU fail. Set bit 11 if MSU calibrating. Set bit 13 if ADC timeout
@@ -704,9 +723,10 @@ uint32_t CalculateARINCLabel274( const ARINC429_RxMsgArray * const rxMsgArray,
     }
     return label274ARINCWord;
 }
+#CalculateARINCLabel274
 
 /* Set 23 to 271 bit 11, 15 to 1 */
-
+#CalculateARINCLabel275
 /* Function: CalculateARINCLabel275
  *
  * Description: Set bit 23 if MSU fail. Set bit 25 to zero if FPA SSM is invalid. 
@@ -756,7 +776,9 @@ uint32_t CalculateARINCLabel275( const ARINC429_RxMsgArray * const rxMsgArray )
     }
     return label275ARINCWord;
 }
+#CalculateARINCLabel275
 
+#CalculateBaroCorrection
 /* Function: CalculateBaroCorrection
  * 
  * Description: Calculates baro correction. If the received baro correction
@@ -794,3 +816,4 @@ uint32_t CalculateBaroCorrection( const ARINC429_RxMsgArray * const rxMsgArray )
     ARINC429_AssembleStdBCDmessage( &baroMsg, &baroARINCWord );
     return baroARINCWord;
 }
+#CalculateBaroCorrection
